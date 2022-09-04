@@ -1,7 +1,7 @@
 import fs from "fs";
 export interface IlogInfo {
-    "guildId": string,
-    "guildName": string,
+    "guildId": string | undefined,
+    "guildName": string | undefined,
     "data": string
 }
 export class Logger {
