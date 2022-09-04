@@ -1,8 +1,10 @@
 import fs from "fs";
+import moment from "moment";
 export interface IlogInfo {
-    "guildId": string | undefined,
-    "guildName": string | undefined,
-    "data": string
+    "guildId": string | undefined;
+    "guildName": string | undefined;
+    "data": string;
+    "time"?: string
 }
 export class Logger {
 	logPath: string;
@@ -30,6 +32,7 @@ export class Logger {
 			let n = 0;
 			for (const file of files) {
 				const nFile = Number(file.replace(".txt", "").split("-")[1]);
+				if (isNaN(nFile)) continue;
 				if (nFile > n) {
 					n = nFile;
 				}
@@ -53,6 +56,7 @@ export class Logger {
 		});
 	}
 	public addLog(logInfo: IlogInfo): void {
+		if (!logInfo.time) logInfo.time = moment().utc().toDate().toString();
 		fs.appendFile(`${this.logPath}/${this.fileName}`, `\n${JSON.stringify(logInfo)}`, (err) => {
 			if (err) console.log(err);
 			return;

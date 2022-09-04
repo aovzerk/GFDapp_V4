@@ -28,6 +28,7 @@
     "@types/node": "^18.7.14",
     "discord.js": "^14.3.0",
     "import-fresh": "^3.3.0",
+    "moment": "^2.29.4",
     "mongodb": "^4.9.1",
     "ts-node": "^10.9.1",
     "tslib": "^2.4.0"
