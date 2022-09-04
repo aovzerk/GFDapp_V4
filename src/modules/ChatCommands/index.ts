@@ -18,7 +18,7 @@ export class ChatCommands extends BaseModule implements IBaseModule {
 		const commandFiles = fs.readdirSync("./src/modules/ChatCommands/Commands").filter(file => file.endsWith(".js"));
 		console.log("Загрузка текстовых команд");
 		for (const file of commandFiles) {
-			const command = importFresh(`./Commands/${file}`) as any;
+			const command = importFresh(`./Commands/${file}`) as BaseCommand;
 			if (command.description.load) {
 				this.commands.set(command.description.name, command);
 				console.log(`${file} Загружен`);
