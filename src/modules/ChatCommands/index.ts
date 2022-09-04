@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Message } from "discord.js";
 import { ExtendClient } from "../../Client";
-import { BaseModule, IBaseModule } from "./BaseModule";
+import { BaseModule, IBaseModule } from "../BaseModule";
 import importFresh from "import-fresh";
 import fs from "fs";
 import { BaseCommand, CommandResponse } from "./BaseCommand";
