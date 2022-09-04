@@ -1,5 +1,5 @@
 import { Message } from "discord.js";
-import { ExtendClient } from "../Client";
+import { ExtendClient } from "../../Client";
 export interface CommandDescription {
     name: string;
     load: boolean;

@@ -1,4 +1,4 @@
-import { BaseCommand, CommandArgs, CommandDescription, CommandResponse, CommandState } from "../../BaseCommand";
+import { BaseCommand, CommandArgs, CommandDescription, CommandResponse, CommandState } from "../BaseCommand";
 const descriptionCommand = {
 	"name": "hello",
 	"load": true
@@ -11,10 +11,9 @@ class Hello implements BaseCommand {
 	/**
      * Запуск команды
      * run
-     * @param {params} аргументы команды
+     * @param {CommandArgs} params аргументы команды
     */
 	public async run(params: CommandArgs): Promise<CommandResponse> {
-		console.log(this);
 		try {
 			if (params.args.length == 0) {
 				await params.message.reply("Введите сообщение =)");

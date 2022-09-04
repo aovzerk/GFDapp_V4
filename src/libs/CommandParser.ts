@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { CommandInteraction, Message } from "discord.js";
 import { ExtendClient } from "../Client";
-import { BaseCommand, CommandArgs } from "../modules/BaseCommand";
+import { BaseCommand, CommandArgs } from "../modules/ChatCommands/BaseCommand";
 interface CommandParsed{
     command: BaseCommand;
     args: CommandArgs;

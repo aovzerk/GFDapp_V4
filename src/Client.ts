@@ -18,10 +18,11 @@ export class ExtendClient extends Client {
 	/**
 	 * Запустить бота
 	 * init
+	 * @param {string} token токен бота
 	 */
-	public init(token: string): void {
-		this.chatCommands.init();
-		this.login(token);
-		console.log("Bot Loggined");
+	public async init(token: string): Promise<void> {
+		await this.chatCommands.init();
+		await this.login(token);
+		console.log(`Bot ${this.user?.username}#${this.user?.discriminator} logged in`);
 	}
 }

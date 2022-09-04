@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Awaitable } from "discord.js";
-import { ExtendClient } from "../Client";
+import { ExtendClient } from "../../Client";
 
 export interface IBaseModule {
     init(): void
